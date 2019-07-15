@@ -1,0 +1,71 @@
+{
+  "name": "{{name}}",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.conf.js",
+    "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.conf.js --progress",
+    "analyz": "cross-env analyz=true npm run build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    {{#if mobile}}
+    "@ice-point/webpack-server-qrcode": "^1.0.0",
+    {{/if}}
+    "autoprefixer": "^9.1.5",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.2",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    {{#with less}}
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    {{/with}}
+    "mini-css-extract-plugin": "^0.4.4",
+    {{#with scss}}
+    "node-sass": "^4.9.3",
+    {{/with}}
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    {{#if mobile}}
+    "postcss-adaptive": "^0.5.0",
+    {{/if}}
+    "postcss-flexbugs-fixes": "^4.1.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.4.0",
+    {{#if redux}}
+    "redux-logger": "^3.0.6",
+    {{/if}}
+    {{#with scss}}
+    "sass-loader": "^7.1.0",
+    {{/with}}
+    "style-loader": "^0.23.0",
+    {{#with stylus}}
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    {{/with}}
+    "url-loader": "^1.1.1",
+    "webpack": "^4.20.2",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4"{{#with pwa}},
+    "workbox-webpack-plugin": "^4.3.1"
+    {{/with}}
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"{{#if router}},
+    "react-router-dom": "^4.3.1"{{/if}}{{#if redux}},
+    "react-redux": "^5.1.1",
+    "redux": "^4.0.1"
+    {{/if}}
+  }
+}

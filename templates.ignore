@@ -1,0 +1,22 @@
+{{#unless redux}}
+src/actions
+src/reducers
+src/store
+{{/unless}}
+{{#unless router}}
+src/views/about
+{{/unless}}
+{{#unless scss}}
+.scss
+{{/unless}}
+{{#unless less}}
+.less
+{{/unless}}
+{{#unless stylus}}
+.styl
+{{/unless}}
+{{#unless pwa}}
+static/icons/
+{{/unless}}
+
+templates.ignore

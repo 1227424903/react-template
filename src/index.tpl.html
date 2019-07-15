@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  {{#if mobile}}
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  {{/if}}
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{name}}</title>
+  {{#with pwa}}
+  <link rel="manifest" href="./static/manifest.json">
+  {{/with}}
+  {{#if mobile}}
+  <script>(function flexible(d,b){var h=b.documentElement;var c=d.devicePixelRatio||1;function g(){if(b.body){b.body.style.fontSize=(12*c)+"px"}else{b.addEventListener("DOMContentLoaded",g)}}g();function a(){var i=h.clientWidth/10;h.style.fontSize=i+"px"}a();d.addEventListener("resize",a);d.addEventListener("pageshow",function(i){if(i.persisted){a()}});if(c>=2){var f=b.createElement("body");var e=b.createElement("div");e.style.border=".5px solid transparent";f.appendChild(e);h.appendChild(f);if(e.offsetHeight===1){h.classList.add("hairlines")}h.removeChild(f)}}(window,document));</script>
+  {{/if}}
+</head>
+
+<body>
+  <noscript>
+    <strong>You need to enable JavaScript to run this app.</strong>
+  </noscript>
+  <div id="root"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>
